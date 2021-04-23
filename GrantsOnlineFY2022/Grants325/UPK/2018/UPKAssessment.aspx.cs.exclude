@@ -1,0 +1,118 @@
+﻿using System.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+
+public partial class UPKAssessment : System.Web.UI.Page
+{
+    DAL dal = new DAL();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["GrantApplicantId"] == null) Response.Redirect("../SessionTimeout.aspx");
+
+        if (!IsPostBack)
+        {
+            LoadControls();
+            BindData();
+        }
+    }
+
+    private void LoadControls()
+    {
+        chklAssessmentInstrument.DataSource = dal.GetAssessmentInstruments();
+        chklAssessmentInstrument.DataValueField = "AssessmentInstrumentId";
+        chklAssessmentInstrument.DataTextField = "Description";
+        chklAssessmentInstrument.DataBind();
+
+        rbtnUpkVersion.DataSource = dal.GetUpkVersions();
+        rbtnUpkVersion.DataValueField = "UpkVersionId";
+        rbtnUpkVersion.DataTextField = "Description";
+        rbtnUpkVersion.DataBind();
+    }
+
+    private void BindData()
+    {
+        DataSet ds = dal.GetUpkProgramInformation(Convert.ToInt32(Session["GrantApplicantId"].ToString()));
+
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataRow dr = ds.Tables[0].Rows[0];
+
+            txtAssessmentInstrumentNotes.Text = dr["AssessmentInstrumentNotes"].ToString();
+            rbtnUpkVersion.SelectedIndex = rbtnUpkVersion.Items.IndexOf(rbtnUpkVersion.Items.FindByValue(dr["UpkVersionId"].ToString()));
+            rbtnIsToolLicensed.SelectedIndex = rbtnIsToolLicensed.Items.IndexOf(rbtnIsToolLicensed.Items.FindByValue(dr["IsToolLicensed"].ToString()));
+        }
+
+        if (ds.Tables[1].Rows.Count > 0)
+        {
+            foreach (DataRow dr in ds.Tables[1].Rows)
+            {
+                chklAssessmentInstrument.Items.FindByValue(dr["AssessmentInstrumentId"].ToString()).Selected = true;
+            }
+        }
+    }
+
+    private string GetAssessmentInstruments()
+    {
+        StringBuilder xmlString = new StringBuilder();
+        xmlString.Append("<root>");
+
+        foreach (ListItem li in chklAssessmentInstrument.Items)
+        {
+            if (li.Selected)
+                xmlString.Append(String.Format("<Tool><AssessmentInstrumentId>{0}</AssessmentInstrumentId></Tool>", li.Value));
+        }
+        xmlString.Append("</root>");
+
+        return xmlString.ToString();
+    }
+
+    protected void btnNext_Click(object sender, EventArgs e)
+    {
+        if (Page.IsValid)
+        {
+            int retVal = dal.SaveUpkProgramInformation(Convert.ToInt32(Session["GrantApplicantId"].ToString())
+                , Int32.Parse(Session["ProgramTypeId"].ToString()), null, null, null, null, null, null, null, null, null, null, null, null, null
+                , GetAssessmentInstruments()
+                , txtAssessmentInstrumentNotes.Text
+                , Convert.ToInt32(rbtnUpkVersion.SelectedValue), null
+                , null, null, null, null, null, null, null, Convert.ToInt32(rbtnIsToolLicensed.SelectedValue));
+
+            if (retVal == 0)
+            {
+                lblMessage.Text = "Unable to save information. Please contact EEC.";
+            }
+
+            Response.Redirect("UPKClass.aspx");
+        }
+    }
+
+    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        if (chklAssessmentInstrument.SelectedIndex == -1)
+        {
+            args.IsValid = false;
+        }
+    }
+
+    protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        if (rbtnUpkVersion.SelectedIndex == -1)
+        {
+            args.IsValid = false;
+        }
+    }
+
+    protected void CustomValidator3_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        if (rbtnIsToolLicensed.SelectedIndex == -1)
+        {
+            args.IsValid = false;
+        }
+    }
+}

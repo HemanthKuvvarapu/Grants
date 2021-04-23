@@ -1,0 +1,220 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Text;
+
+public partial class UPKEnrollment : System.Web.UI.Page
+{
+    DAL dal = new DAL();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["GrantApplicantId"] == null) Response.Redirect("../SessionTimeout.aspx");
+
+        BindScripts();
+
+        if (!IsPostBack)
+        {
+            LoadControls();
+            BindData(false);
+        }
+    }
+
+    private void BindScripts()
+    {
+        txtWeeksPerYearOperation.Attributes.Add("onchange", "javascript:calTotalHrPerYear()");
+        txtDaysPerWeekOperation.Attributes.Add("onchange", "javascript:calTotalHrPerYear()");
+        txtHoursPerDayOperation.Attributes.Add("onchange", "javascript:calTotalHrPerYear()");
+    }
+
+    private void LoadControls()
+    {
+        chklAssessmentInstrument.DataSource = dal.GetAssessmentInstruments();
+        chklAssessmentInstrument.DataValueField = "AssessmentInstrumentId";
+        chklAssessmentInstrument.DataTextField = "Description";
+        chklAssessmentInstrument.DataBind();
+
+        rbtnUpkVersion.DataSource = dal.GetUpkVersions();
+        rbtnUpkVersion.DataValueField = "UpkVersionId";
+        rbtnUpkVersion.DataTextField = "Description";
+        rbtnUpkVersion.DataBind();
+    }
+
+    private void BindData(bool isAfterSaved)
+    {
+        DataSet ds = dal.GetUpkProgramInformation(Convert.ToInt32(Session["GrantApplicantId"].ToString()));
+
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            DataRow dr = ds.Tables[0].Rows[0];
+
+            txtWeeksPerYearOperation.Text = !String.IsNullOrEmpty(dr["WeeksPerYearOperation"].ToString()) ? dr["WeeksPerYearOperation"].ToString() : "";
+            txtDaysPerWeekOperation.Text = !String.IsNullOrEmpty(dr["DaysPerWeekOperation"].ToString()) ? dr["DaysPerWeekOperation"].ToString() : "";
+            txtHoursPerDayOperation.Text = !String.IsNullOrEmpty(dr["HoursPerDayOperation"].ToString()) ? dr["HoursPerDayOperation"].ToString() : "";
+
+            txtUpkFundedPreschoolClassrooms.Text = !String.IsNullOrEmpty(dr["UpkFundedPreschoolClassrooms"].ToString()) ? dr["UpkFundedPreschoolClassrooms"].ToString() : "";
+            txtNonUpkFundedPreschoolClassrooms.Text = !String.IsNullOrEmpty(dr["NonUpkFundedPreschoolClassrooms"].ToString()) ? dr["NonUpkFundedPreschoolClassrooms"].ToString() : "";
+
+            txtChildren3YearOld.Text = !String.IsNullOrEmpty(dr["Children3YearOld"].ToString()) ? dr["Children3YearOld"].ToString() : "";
+            txtChildren4YearOld.Text = !String.IsNullOrEmpty(dr["Children4YearOld"].ToString()) ? dr["Children4YearOld"].ToString() : "";
+            txtChildren5YearOld.Text = !String.IsNullOrEmpty(dr["Children5YearOld"].ToString()) ? dr["Children5YearOld"].ToString() : "";
+
+            txtPreschoolChildrenEnrolled.Text = !String.IsNullOrEmpty(dr["PreschoolChildrenEnrolled"].ToString()) ? dr["PreschoolChildrenEnrolled"].ToString() : "";
+            txtPreschoolChildrenProjectedEnrollment.Text = !String.IsNullOrEmpty(dr["PreschoolChildrenProjectedEnrollment"].ToString()) ? dr["PreschoolChildrenProjectedEnrollment"].ToString() : "";
+
+            txtChildrenWithFinAssistance.Text = !String.IsNullOrEmpty(dr["ChildrenWithFinAssistance"].ToString()) ? dr["ChildrenWithFinAssistance"].ToString() : "";
+            txtProjectedChildrenWithFinAssistance.Text = !String.IsNullOrEmpty(dr["ProjectedChildrenWithFinAssistance"].ToString()) ? dr["ProjectedChildrenWithFinAssistance"].ToString() : "";
+
+            txtChildrenWithIEP.Text = !String.IsNullOrEmpty(dr["ChildrenWithIEP"].ToString()) ? dr["ChildrenWithIEP"].ToString() : "";
+            txtUPKChildrenWithIEP.Text = !String.IsNullOrEmpty(dr["UPKChildrenWithIEP"].ToString()) ? dr["UPKChildrenWithIEP"].ToString() : "";
+
+            txtAssessmentInstrumentNotes.Text = dr["AssessmentInstrumentNotes"].ToString();
+            rbtnUpkVersion.SelectedIndex = rbtnUpkVersion.Items.IndexOf(rbtnUpkVersion.Items.FindByValue(dr["UpkVersionId"].ToString()));
+            rbtnIsToolLicensed.SelectedIndex = rbtnIsToolLicensed.Items.IndexOf(rbtnIsToolLicensed.Items.FindByValue(dr["IsToolLicensed"].ToString()));
+
+            txtTotalHoursPerYear.Text = (Int32.Parse(string.IsNullOrEmpty(txtWeeksPerYearOperation.Text) ? "0" : txtWeeksPerYearOperation.Text) *
+                                         Int32.Parse(string.IsNullOrEmpty(txtDaysPerWeekOperation.Text) ? "0" : txtDaysPerWeekOperation.Text) *
+                                         Int32.Parse(string.IsNullOrEmpty(txtHoursPerDayOperation.Text) ? "0" : txtHoursPerDayOperation.Text)).ToString();
+
+            if (isAfterSaved)
+            {
+                tblSuccess.Visible = true;
+                tblPercentInfo.Visible = false;
+                lblPercent1.Text = dal.GetUPKEligibilityAmountPercent(Convert.ToInt32(Session["GrantApplicantId"].ToString()));
+            }
+            else
+            {
+                tblSuccess.Visible = false;
+
+                DataSet ds2 = dal.GetUPKPartStatus(Convert.ToInt32(Session["GrantApplicantId"].ToString()));
+
+                for (int i = 0; i < ds2.Tables[0].Rows.Count; i++)
+                {
+                    DataRow row = ds2.Tables[0].Rows[i];
+
+                    if (row["Part"].ToString() == "3" && row["Status"].ToString() == "1")
+                    {
+                        tblPercentInfo.Visible = true;
+                        lblPercent2.Text = dal.GetUPKEligibilityAmountPercent(Convert.ToInt32(Session["GrantApplicantId"].ToString()));
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (ds.Tables[1].Rows.Count > 0)
+        {
+            foreach (DataRow dr in ds.Tables[1].Rows)
+            {
+                chklAssessmentInstrument.Items.FindByValue(dr["AssessmentInstrumentId"].ToString()).Selected = true;
+            }
+        }
+
+        tblErrorMessage.Visible = false;
+    }
+
+    private string GetAssessmentInstruments()
+    {
+        StringBuilder xmlString = new StringBuilder();
+        xmlString.Append("<root>");
+
+        foreach (ListItem li in chklAssessmentInstrument.Items)
+        {
+            if (li.Selected)
+                xmlString.Append(String.Format("<Tool><AssessmentInstrumentId>{0}</AssessmentInstrumentId></Tool>", li.Value));
+        }
+        xmlString.Append("</root>");
+
+        return xmlString.ToString();
+    }
+
+    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        if (chklAssessmentInstrument.SelectedIndex == -1)
+        {
+            args.IsValid = false;
+        }
+    }
+
+    protected void CustomValidator2_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        if (rbtnUpkVersion.SelectedIndex == -1)
+        {
+            args.IsValid = false;
+        }
+    }
+
+    protected void CustomValidator3_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+        if (rbtnIsToolLicensed.SelectedIndex == -1)
+        {
+            args.IsValid = false;
+        }
+    }
+
+    /*
+     if ((Session["ProgramTypeId"].ToString() == "1" || Session["ProgramTypeId"].ToString() == "2" || Session["ProgramTypeId"].ToString() == "3")
+            && (txtUpkFundedPreschoolClassrooms.Text.Trim() == "" || txtNonUpkFundedPreschoolClassrooms.Text.Trim() == "")
+            )
+        {
+            validData = false;
+            errMsg += "Please enter the UPK Classroom information.<br>";
+        }
+     */
+    protected void btnBackToHome_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("UPKHome.aspx");
+    }
+
+    protected void btnSaveHome_Click(object sender, EventArgs e)
+    {
+        if (Page.IsValid)
+        {
+            int retVal = dal.SaveUpkProgramInformation(Convert.ToInt32(Session["GrantApplicantId"].ToString())
+                    , Int32.Parse(Session["ProgramTypeId"].ToString())
+                    , null
+                    , null
+                    , Convert.ToInt32(txtWeeksPerYearOperation.Text)
+                    , Convert.ToInt32(txtDaysPerWeekOperation.Text)
+                    , Convert.ToInt32(txtHoursPerDayOperation.Text)
+                    , txtUpkFundedPreschoolClassrooms.Text == "" ? 0 : Convert.ToInt32(txtUpkFundedPreschoolClassrooms.Text)
+                    , txtNonUpkFundedPreschoolClassrooms.Text == "" ? 0 : Convert.ToInt32(txtNonUpkFundedPreschoolClassrooms.Text)
+                    , Convert.ToInt32(txtPreschoolChildrenEnrolled.Text)
+                    , Convert.ToInt32(txtPreschoolChildrenProjectedEnrollment.Text)
+                    , Convert.ToInt32(txtChildrenWithFinAssistance.Text)
+                    , Convert.ToInt32(txtProjectedChildrenWithFinAssistance.Text)
+                    , Convert.ToInt32(txtChildrenWithIEP.Text)
+                    , Convert.ToInt32(txtUPKChildrenWithIEP.Text)
+                    , GetAssessmentInstruments()
+                    , txtAssessmentInstrumentNotes.Text
+                    , Convert.ToInt32(rbtnUpkVersion.SelectedValue)
+                    , null
+                    , null, null, null, null
+                    , Convert.ToInt32(txtChildren3YearOld.Text)
+                    , Convert.ToInt32(txtChildren4YearOld.Text)
+                    , Convert.ToInt32(txtChildren5YearOld.Text)
+                    , Convert.ToInt32(rbtnIsToolLicensed.SelectedValue)
+                    , null
+                    , null
+                    , "0"
+                    , "");
+
+            dal.SaveUPKPartStatus(Convert.ToInt32(Session["GrantApplicantId"].ToString()), "3", 1);
+
+            BindData(true);
+        }
+        else
+        {
+            tblErrorMessage.Visible = true;
+        }
+    }
+
+    protected void btnCancelSave_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("UPKHome.aspx");
+    }
+}

@@ -1,0 +1,43 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NarrativeSection.ascx.cs" Inherits="controls_NarrativeSection" %>
+ <style type="text/css">
+     .style1
+     {
+         color: #000066;
+         text-decoration: underline;
+         font-weight: bold;
+     }
+ </style>
+ <asp:Panel ID="pnlITSection" runat="server">
+    <div><hr /></div>
+    <div class="style1">Infant-Toddler Slots</div>
+        <div align=right><font style="background-color:#99CCFF"><i>You have entered </i>: <b><asp:Label ID="txtITSectionCount" runat="server" Text="0"></asp:Label></b> words.</font></div>
+        <div align=center><asp:TextBox ID="txtITSection" runat="server" TextMode="MultiLine" Height="200px" Width=100%></asp:TextBox>
+        <br />
+        <asp:Button ID="btnSaveITSection" runat="server" Text="Save Information" 
+                onclick="btnSaveITSection_Click" />
+        </div>
+        <div><asp:Label ID=lblITSection runat=server Text=""></asp:Label></div>
+ </asp:Panel>
+ 
+ <asp:Panel ID="pnlPSSection" runat="server">
+    <div class="style1" >Preschool Slots</div>
+        <div align=right><font style="background-color:#99CCFF"><i>You have entered </i>: <b><asp:Label ID="txtPSSectionCount" runat="server" Text="0"></asp:Label></b> words.</font></div>
+        <div align=center><asp:TextBox ID="txtPSSection" runat="server" TextMode="MultiLine" Height="200px" Width=100%></asp:TextBox>
+        <br />
+        <asp:Button ID="btnSavePSSection" runat="server" Text="Save Information" 
+                onclick="btnSavePSSection_Click" />
+        </div>
+    <div><asp:Label ID=lblPSSection runat=server Text=""></asp:Label></div>
+ </asp:Panel>
+ 
+ <asp:Panel ID="pnlOSTSection" runat="server">
+    <div class="style1">Out of school time Slots</div>
+        <div align=right><font style="background-color:#99CCFF"><i>You have entered </i>: <b><asp:Label ID="txtOSTSectionCount" runat="server" Text="0"></asp:Label></b> words.</font></div>
+        <div align=center><asp:TextBox ID="txtOSTSection" runat="server" TextMode="MultiLine" Height="200px" Width=100%></asp:TextBox>
+        <br />
+        <asp:Button ID="btnOSTSection" runat="server" Text="Save Information" 
+                onclick="btnOSTSection_Click" />
+        </div>
+     <div><asp:Label ID=lblOSTSection runat=server Text=""></asp:Label></div>
+ </asp:Panel>
+ 

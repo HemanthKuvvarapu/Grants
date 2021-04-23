@@ -1,0 +1,102 @@
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="GrantDescription.aspx.cs" Inherits="GrantDescription" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<fieldset><legend>Background</legend>
+    The Massachusetts Department of Early Education and Care (EEC) provides services for children in Massachusetts through a mixed delivery system which includes child care centers, out-of-school time programs, family child care homes, public preschool programs, private school preschool and kindergarten, and Head Start programs. EEC is responsible for licensing early education and care and out-of-school time programs throughout Massachusetts and for providing child care financial assistance to low-income families with children birth to 13 years of age.  In addition EEC provides support for information and referral services, inclusive programming for children with special needs, parenting and family support, and professional development opportunities for educators in the early education and out of school time fields.  These efforts affect thousands of early education and out of school time providers, who serve more than 275,000 children each day.   In its broadest role, EEC also serves as a source of information to more than one million families in Massachusetts.   
+</fieldset>
+
+<fieldset><legend>Purpose</legend>
+    The purpose of these supplemental federal funds (Section 619, Part B of IDEA) is to provide school systems with funding to support 3, 4, and 5 year-old children with disabilities in high-quality programs across settings following the federal and state requirements for inclusive settings.
+    <br />
+    The Department of Early Education and Care (EEC) collaborates with the Department of Elementary and Secondary Education’s (ESE) Special Education Policy and Planning (SEPP) unit on the indicators in the Massachusetts State Performance Plan (<a href="http://www.doe.mass.edu/sped/spp/full.doc" target=_blank>http://www.doe.mass.edu/sped/spp/full.doc</a>) and will report on the three indicators related to early childhood: inclusion and LRE (indicator #6), child outcomes (indicator #7), and transition from Early Intervention (indicator #12). Districts’ responses to the questions in Part III and Part V of this grant will be a main source of data to respond to the State Performance Plan (SPP) for early childhood.  Grantees’ participation is critical to measuring federal, state and local progress.
+
+</fieldset>
+
+<fieldset><legend>Goals and Priorities</legend>
+    <p>Priorities are to address the early childhood indicators in the State Performance Plan:</p>
+    <p><strong>Indicator 6:</strong> Percent of preschool children with IEPs who received special education and related services in settings with typically developing peers (i.e., early childhood settings, home, and part-time early childhood/part-time early childhood special education settings).</p>
+    <p><strong>Indicator 7:</strong> Percent of preschool children with IEPs who demonstrate improved:
+       <ol type="A">
+            <li>Positive social-emotional skills (including social relationships);</li>
+            <li>Acquisition and use of knowledge and skills (including early language/ communication and early literacy); and</li>
+            <li>Use of appropriate behaviors to meet their needs <br />(<a href="www.doe.mass.edu/sped/2006/0522.IDEA.html" target="_blank">www.doe.mass.edu/sped/2006/0522.IDEA.html</a>)</li>
+       </ol>
+    </p>
+    <p><strong>Indicator 12:</strong> Percent of children referred by Part C prior to age 3 who are found eligible for Part B, and who have an IEP developed and implemented by their third birthdays.</p>
+</fieldset>
+
+<fieldset><legend>Eligibility</legend>
+    This is an application for renewal of FY 2008 Early Childhood Special Education grant funding.   School Districts and Charter Schools may apply for the eligibility amounts listed <b>on the EEC website at</b>
+    <a href="http://www.eec.state.ma.us/kr_grant_submit.aspx">http://www.eec.state.ma.us/kr_grant_submit.aspx</a>.  Grant awards are subject to FY 2009 federal budget appropriations and budget language.
+</fieldset>
+
+<fieldset><legend>Funding</legend>
+    The FY09 federal award is $9,735,466, with 76% or $7,331,103 available to award to school districts and charter schools. Allocations range from $506 to $500,000. The “FY09 262 Special Education Allocation Grant Amount” for which each school district is eligible is available at the EEC website: 
+    <a href="http://www.eec.state.ma.us/kr_grant_submit.aspx">http://www.eec.state.ma.us/kr_grant_submit.aspx</a>.
+    <br />
+    <br />
+    Funds will be awarded according to the required funding formula that is based on the 1996 number of three-, four- and five-year olds with disabilities, current number of three to five- year olds living in poverty, and the total enrollment of K-12 students in the community.
+</fieldset>
+
+<fieldset><legend>Fund Use</legend>
+    <p>The Early Childhood Special Education Allocation Renewal Application allows school systems to provide programs for three, four, and five-year olds and/or to contract with other public and private providers, such as Head Start, private preschools, and/or licensed child care providers. Funds may also support the three indicators 6, 7, and 12 (stated above related to early childhood) in the Massachusetts State Performance Plan. The cost for contracted services must be within the range of the provider’s rate schedule for similar services to other children and their families. Specialists/therapists and aides may be funded only if they are providing services in an inclusive setting. All expenditures should relate to the three indicators related to early childhood. </p>
+    <p>Funds <b>may</b> be used to do the following:</p>
+    <ul>
+        <li>Address the three SPP indicators related to early childhood.</li>
+        <li>Add staff to work in the classroom to assist with inclusion activities or consult with the teacher on inclusion issues. This may include but is not limited to a behavioral specialist, aide, therapist, etc. The designated staff must work in a large or small group setting within the inclusive classroom. </li>
+        <li>Support transition activities from Early Intervention into preschool, from preschool into kindergarten, and from kindergarten into Grade 1.</li>
+        <li>Provide training on inclusive practices for parents, teachers, community providers, therapists and other staff members working with young children with disabilities. </li>
+        <li>Facilitate parent involvement as a means of improving services and results for children with disabilities.</li>
+        <li>Expedite services for children with disabilities experiencing homelessness.</li>
+    </ul>
+    <p>These funds <b>may not</b> be used for the following:</p>
+    <ul>
+        <li>Screening and evaluation materials or activities related to eligibility.</li>
+        <li>IEP services provided in a pull-out or one-on-one setting. </li>
+        <li>Purchasing adaptive equipment for individual children as designated in their Individualized Education Program (IEP) or specific services such as Applied Behavioral Analysis (ABA).</li>
+    </ul>
+    
+</fieldset>
+
+<fieldset><legend>Project Duration</legend>
+    This is a one year grant for the period 9/1/2008 – 8/31/2009 (provided applicants meet all program requirements).  Grantees may be eligible to apply to renew their grants, contingent upon the appropriation of funds and authorization for such renewals.
+    <p><strong>Contact: </strong><br />
+    Patricia Cameron, Senior Policy Specialist, Special Education<br />
+    (617)988-7812<br />
+    <a href="mailto:Patricia.Cameron@mass.gov">Patricia.Cameron@mass.gov</a>
+    </p>
+       <p><strong>Date Due: </strong>In order to be reasonably assured that funds will be available by the beginning of the school year, Renewal Applications should be received at EEC’s Central Office by 4:30 p.m. on Monday June 30, 2008.  </p>
+</fieldset>
+
+<fieldset><legend>Required Forms</legend>
+    <ol>
+    <li>Part II - Budget Detail Pages and Budget Narrative</li>
+    <li>Part III- Required Program Information</li>
+    <li>Part IV - Required Contact Information</li>
+    <li>Part V - Required Statistical Information </li>
+    <li>Schedule A - Consolidated Assignment <i>(if applicable)</i> </li>
+    </ol>
+    <p><b>Please note</b>: Part I: Standard Contract Form will be sent to you by EEC fiscal staff following the programmatic approval of your grant. You will have to sign and return the contract form to EEC with an original signature (no copies).</p>
+</fieldset>
+
+<fieldset><legend>Submission Instructions</legend>
+    <div align=center><strong>******PLEASE NOTE: SUBMISSION REQUIRES COMPLETION OF ALL PORTIONS OF THIS RENEWAL APPLICATION****</strong></div>
+</fieldset>
+<fieldset><legend>Reporting</legend>
+    In order to recognize accomplishments, identify challenges and inform furute funding decisions, mid and end-of-year progress reports are required of all FY09 EEC grant recipients. These reports will provide EEC with information regarding the successes and challenges in meeting grant goals and objectives. A template for reporting this information will be forthcoming. The mid year report is due by 4:00pm Friday, January 16th 2009 and receipt of the end-of-year report will be required for approval of final grant payments. These narrative reports are in addition to the existing reporting requirements below.
+</fieldset>
+    
+    <fieldset>
+     <div align=center><asp:CheckBox ID=chkNarrativeRead Text="I have read the narrative" runat=server />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <asp:Button ID=btnContinue runat=server Text="Continue" 
+             onclick="btnContinue_Click" />
+         <br />
+         <asp:CustomValidator ID="cvNarrativeRead" runat="server" Display="Dynamic" 
+             ErrorMessage="Please indicate if you have read the narrative!"></asp:CustomValidator><br /><br />
+             <asp:Label ID=lblMessage runat=server Text=""></asp:Label>
+        </div>   
+    </fieldset>
+</asp:Content>
+

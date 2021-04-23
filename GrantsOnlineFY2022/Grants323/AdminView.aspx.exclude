@@ -1,0 +1,17 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AdminView.aspx.cs" Inherits="AdminView" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Panel ID=pnlDataSummary runat=server Visible=false>
+    <br />
+        <asp:Label ID=lblDataSummary runat=server></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID=btnExportToExcel runat=server Text="Export to Excel" 
+            onclick="btnExportToExcel_Click" />
+        <br /><br />
+        <asp:GridView ID=grdDataSummary runat=server AutoGenerateColumns=true AlternatingRowStyle-CssClass="AlternateColor2">
+            <HeaderStyle BackColor="ActiveCaption" ForeColor="ActiveCaptionText" />
+        </asp:GridView>
+    </asp:Panel> 
+</asp:Content>
+

@@ -1,0 +1,241 @@
+﻿BODY
+{
+	padding-right:0px;
+	padding-left:0px;
+	background:#bed2ad;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
+	font-family: verdana, Arial, Helvetica, sans-serif;
+	font-size: .9em;
+	
+}
+
+.custom
+{
+	display: block;
+}
+
+.header
+{
+	background-color:#dde9d5;
+}
+
+.content
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13px;
+    color: #000;
+    LINE-HEIGHT: 1.4em;
+}
+
+.footer
+{
+	height:45px;
+	background-color:#b5111a;
+	padding-left:15px;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:0.7em
+}
+
+.footer A:link 
+{
+	color: #ffffff; text-decoration:none
+}
+
+.footer A:visited
+{
+	color: #ffffff; text-decoration:none
+}
+
+.footer A:hover
+{
+	color:#ffffff; text-decoration:underline
+}
+
+.navTopMenu .navTopMenuItemF
+{
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	color:#ffffff;
+	text-decoration:none;
+	text-align:center
+}
+
+.navTopMenu .navTopMenuItemB
+{
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	color:#b5111a;
+	text-decoration:none;
+	text-align:center
+}
+
+.navTopMenu A:hover
+{
+	
+}
+
+H1 {
+	PADDING-RIGHT: 20px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT-Family:Arial, "Times New Roman", Times; COLOR: #c24736; PADDING-TOP: 0.5em
+}
+H2 {
+	PADDING-RIGHT: 20px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT-Family:Arial, "Times New Roman", Times; Font-weight:bold; COLOR: #c24736; PADDING-TOP: 0.5em;Height:50px;
+}
+H3 {
+	PADDING-RIGHT: 20px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT-Family:Arial, "Times New Roman", Times; Font-weight:bold; COLOR: #c24736; PADDING-TOP: 0.5em;Height:22px;
+}
+
+.LabelCell
+{
+	text-align: left;
+}
+
+.BGColor1
+{
+	background-color: #FFFFCC;
+    width: 102%;
+	height: 61px;
+}
+
+legend
+{
+	color: #000080;
+	font-weight: bold;
+	 padding-top:0px;
+	 
+	border-color: #808000;
+}
+
+ .AlternateColor1
+{
+	background-color: #99CCFF;
+}
+
+.AlternateColor2
+{
+	background-color: #ccffff;
+}
+
+fieldset
+{
+	margin-left: 2px;
+	padding: 15px;
+	width: 907px;
+	height: 181px;
+	margin-right: 12px;
+}
+
+.TabbedGCCSites
+{
+	background-color:#DEDFDE;	
+	border-left-color:transparent;
+	border-left-style:ridge;
+	border-left-width:thin;
+	border-bottom-color:transparent;
+	border-bottom-style:ridge;
+	border-bottom-width:thin;
+	border-top-color:transparent;
+	border-top-style:ridge;
+	border-top-width:thin;
+	border-right-width:thin;
+	border-right-color:#DEDFDE;
+	border-right-style:solid;
+}
+
+.BoxBorder
+{
+	padding:1px;
+	border-left-color:Black;
+	border-left-style:ridge;
+	border-left-width:thin;
+	border-bottom-color:Black;
+	border-bottom-style:ridge;
+	border-bottom-width:thin;
+	border-top-color:Black;
+	border-top-style:ridge;
+	border-top-width:thin;
+	border-right-width:thin;
+	border-right-color:black;
+	border-right-style:solid;
+}
+	
+.PanelLeftBorder
+{
+	margin-left:5px;
+	padding:5px;
+	border-left-color:Black;
+	border-left-style:ridge;
+	border-left-width: 0px;
+}
+
+
+
+.modalBackground
+{ 
+	top: 50px; left: 50px;
+	background-color: Gray;
+	filter: alpha(opacity=90);
+	opacity: 0.90;
+}
+
+
+
+.updateProgress
+{
+	border-width: 1px;
+	border-style: solid;
+	background-color: #FFFFFF;
+	position: absolute;
+	width: 580px;
+	height: 65px;
+}
+
+
+	
+	
+	.MenuContent
+        {
+        	BORDER-RIGHT: black thin solid; 
+            BORDER-TOP: black thin none; 
+            BORDER-LEFT: black thin solid; 
+            BORDER-BOTTOM: black thin solid;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-right:10px;
+            background-color:#f0f6f2; 
+        }
+        .SeparatorTab
+        {
+        	BORDER-RIGHT: black thin none; 
+            BORDER-TOP: black thin none; 
+            BORDER-LEFT: black thin none; 
+            BORDER-BOTTOM: black thin solid;
+        }
+        .SelectedTab
+        {
+        	background-color:#f0f6f2; 
+        	color:#000000; 
+        	BORDER-RIGHT: black thin solid; 
+            BORDER-TOP: black thin solid; 
+            BORDER-LEFT: black thin solid; 
+            BORDER-BOTTOM: black thin none;
+        }
+        .NormalTab
+        {
+            background-color:DarkGray; 
+            font-family:verdana; 
+            font-weight:bold; 
+            font-size:8pt; 
+            color:White; 
+            width:120; 
+            height:30; 
+            text-align:center; 
+            BORDER-RIGHT: black thin solid; 
+            BORDER-TOP: black thin solid; 
+            BORDER-LEFT: black thin solid; 
+            BORDER-BOTTOM: black thin solid;
+        }

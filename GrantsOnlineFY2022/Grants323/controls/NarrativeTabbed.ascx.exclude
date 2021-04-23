@@ -1,0 +1,51 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="NarrativeTabbed.ascx.cs" Inherits="controls_NarrativeTabbed" %>
+ <table id=tblMenu runat=server width=100% cellpadding=0 cellspacing=0>
+            <tr>
+                <td align=center class="SelectedTab"><asp:LinkButton ID=lbtnIT runat=server 
+                        Text="Center-Based Infant Toddler" onclick="lbtnIT_Click"></asp:LinkButton></td>
+                <td align=center class="SeparatorTab">&nbsp;&nbsp;</td>
+                <td align=center class="NormalTab"><asp:LinkButton ID=lbtnPS runat=server 
+                        Text="Center-Based Preschool" onclick="lbtnPS_Click"></asp:LinkButton></td>
+                <td align=center class="SeparatorTab">&nbsp;&nbsp;</td>
+                <td align=center class="NormalTab"><asp:LinkButton ID=lbtnOST runat=server 
+                        Text="Out of School Time" onclick="lbtnOST_Click"></asp:LinkButton></td>
+                <td align=center class="SeparatorTab">&nbsp;&nbsp;</td>
+                <td align=center class="NormalTab">
+                    <asp:LinkButton ID=lbtnFCC runat=server 
+                        Text="FCC Systems" onclick="lbtnFCC_Click"></asp:LinkButton></td>
+                
+            </tr>
+        </table>
+        <table id=tblMenuContent class="MenuContent" runat=server width=100% cellpadding=0 cellspacing=0>
+            <tr>
+                <td>
+                    <asp:Panel ID="pnlITSection" runat="server">
+                        <div align=right><font style="background-color:#99CCFF"><i>You have entered </i>: <b><asp:Label ID="txtITSectionCount" runat="server" Text="0"></asp:Label></b> words.</font></div>
+                        <div align=center><asp:TextBox ID="txtITSection" runat="server" TextMode="MultiLine" Height="200px" Width=100%></asp:TextBox></div>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlPSSection" runat=server Visible=false>
+                        <div align=right><font style="background-color:#99CCFF"><i>You have entered </i>: <b><asp:Label ID="txtPSSectionCount" runat="server" Text="0"></asp:Label></b> words.</font></div>
+        <div align=center><asp:TextBox ID="txtPSSection" runat="server" TextMode="MultiLine" Height="200px" Width=100%></asp:TextBox></div>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlOSTSection" runat=server Visible=false>
+                        <div align=right><font style="background-color:#99CCFF"><i>You have entered </i>: <b><asp:Label ID="txtOSTSectionCount" runat="server" Text="0"></asp:Label></b> words.</font></div>
+        <div align=center><asp:TextBox ID="txtOSTSection" runat="server" TextMode="MultiLine" Height="200px" Width=100%></asp:TextBox></div>
+                    </asp:Panel>
+                    
+                    <asp:Panel ID="pnlFCCSection" runat=server Visible=false>
+                        <div align=right><font style="background-color:#99CCFF"><i>You have entered </i>: <b><asp:Label ID="txtFCCSectionCount" runat="server" Text="0"></asp:Label></b> words.</font></div>
+        <div align=center><asp:TextBox ID="txtFCCSection" runat="server" TextMode="MultiLine" Height="200px" Width=100%></asp:TextBox></div>
+                    </asp:Panel>
+                </td>
+            </tr>
+            <tr>
+                <td><hr /></td>
+            </tr>
+            <tr><td align=center><asp:Button ID=btnSaveSection runat=server 
+                    Text="Save Information" onclick="btnSaveSection_Click" />
+                    &nbsp;&nbsp;&nbsp;<asp:Button ID=btnSaveAndNext runat=server 
+                    Text="Save and Go To Next Page" onclick="btnSaveAndNext_Click" />
+                    </td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td><asp:Label ID=lblMessage runat=server Text=""></asp:Label></td></tr>
+        </table>

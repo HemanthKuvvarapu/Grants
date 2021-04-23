@@ -1,0 +1,84 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage4.master" AutoEventWireup="true" CodeFile="UPKAssessment.aspx.cs" Inherits="UPKAssessment" %>
+<%@ MasterType VirtualPath="~/MasterPage4.master" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxControlToolkit" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+       <ajaxControlToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </ajaxControlToolkit:ToolkitScriptManager>
+    <table id="tblData" runat="server" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #FFFFCC">
+        <tr style="background-color: #6699FF; color: #FFFFFF">
+            <td style="font-size:larger;height:25px">&nbsp;&nbsp;<b>Assessment</b></td>
+        </tr>
+        <tr>
+            <td><span style="color:red; font-weight:bold;">*</span>&nbsp;<b>10. What EEC-approved assessment instrument is your program using?</b></td>
+        </tr>
+        <tr>
+            <td style="padding-left:50px; ">
+                <asp:CheckBoxList ID="chklAssessmentInstrument" runat="server"></asp:CheckBoxList>
+                <asp:CustomValidator ID="CustomValidator1" runat="server" 
+                    ControlToValidate="txtAssessmentInstrumentNotes" Display="Dynamic" 
+                    ErrorMessage="Please select one of the options" 
+                    onservervalidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="padding-left:50px"><b>What date did your program begin using this tool?</b> If your program has been using the selected tool for less than a year, please briefly explain the reason your program switched tools. Please indicate which tool the program switched from and when the switch occurred.</td>
+        </tr>
+        <tr>
+            <td style="padding-left:50px; "><asp:TextBox ID="txtAssessmentInstrumentNotes" runat="server" TextMode="MultiLine" Rows="8" Width="95%"></asp:TextBox></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><span style="color:red; font-weight:bold;">*</span>&nbsp;<b>11. Is your program using the online or paper version of the tool?</b></td>
+        </tr>
+        <tr>
+            <td style="padding-left:50px; "><asp:RadioButtonList ID="rbtnUpkVersion" runat="server"></asp:RadioButtonList>
+                <asp:CustomValidator ID="CustomValidator2" runat="server" 
+                    ControlToValidate="rbtnUpkVersion" Display="Dynamic" 
+                    ErrorMessage="Please select one of the options" 
+                    onservervalidate="CustomValidator2_ServerValidate"></asp:CustomValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><span style="color:red; font-weight:bold;">*</span>&nbsp;<b>12. If you are using the online version of the tool are you currently under the Massachusetts Assessment Tool License?</b></td>
+        </tr>
+        <tr>
+            <td style="padding-left:50px; ">
+                <asp:RadioButtonList ID="rbtnIsToolLicensed" runat="server">
+                    <asp:ListItem Text="Yes" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="No" Value="0"></asp:ListItem>
+                    <asp:ListItem Text="Not Sure" Value="2"></asp:ListItem>
+                </asp:RadioButtonList>
+                <asp:CustomValidator ID="CustomValidator3" runat="server" 
+                    ControlToValidate="rbtnIsToolLicensed" Display="Dynamic" 
+                    ErrorMessage="Please select one of the options" 
+                    onservervalidate="CustomValidator3_ServerValidate"></asp:CustomValidator>
+            </td>
+        </tr>
+    </table>
+    <table id="Table2" runat="server" width="100%" cellpadding="0" cellspacing="0" border="0">
+         <tr><td>&nbsp;</td></tr>
+         <tr>
+             <td align="center">
+                 <asp:Button ID="btnNext" Text="Next Page" runat="server" OnClick="btnNext_Click" />
+             </td>
+         </tr>
+         <tr>
+             <td><asp:Label ID="lblMessage" runat="server" Text="" ForeColor="Red"></asp:Label></td>
+         </tr>
+         </table>
+</asp:Content>
+
+
+ 
