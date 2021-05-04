@@ -1,0 +1,45 @@
+﻿.formtext
+{
+	font-family:Arial;
+	font-size:small;
+}
+
+.sectionheader 
+{
+	background-color:silver;
+	height:23px;
+	border-bottom:solid 1px #999999
+}
+
+.sectionheader2 
+{
+	background-color:silver;
+	height:23px;
+	border-bottom:solid 1px #999999;
+	border-top:solid 1px #999999
+}
+
+.hiddenPanel
+{
+	
+}
+
+.tblHeader
+{
+	border:solid 1px #999999
+}
+
+.tblRequirements 
+{
+	border:solid 1px #999999
+}
+
+.tblAnalysis
+{
+	border:solid 1px #999999
+}
+
+.tblResult
+{
+	border:solid 1px #999999
+}

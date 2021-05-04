@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE7C075D-3532-4CCA-B00F-335ECC5751DC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImproperPaymentV2</RootNamespace>
+    <AssemblyName>ImproperPaymentV2</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CaseSummaryForm.aspx" />
+    <Content Include="controls\ResultTemplate.ascx" />
+    <Content Include="CPCAuthoEntry.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorRateReport.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MIDTableForm.aspx" />
+    <Content Include="PaymentReport.aspx" />
+    <Content Include="PostLogin.aspx" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="Report.aspx" />
+    <Content Include="TestLogin.aspx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\SSI\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\SSI\Security.disco" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web References\SSI\Security.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ErrorRateReport.aspx.cs">
+      <DependentUpon>ErrorRateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="MIDTableForm.aspx.cs">
+      <DependentUpon>MIDTableForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="PaymentReport.aspx.cs">
+      <DependentUpon>PaymentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="CaseSummaryForm.aspx.cs">
+      <DependentUpon>CaseSummaryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="CPCAuthoEntry.aspx.cs">
+      <DependentUpon>CPCAuthoEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentReport.aspx.designer.cs">
+      <DependentUpon>PaymentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SSI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Content Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\ResultTemplate.ascx.cs">
+      <DependentUpon>ResultTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Content Include="TestLogin.aspx.cs">
+      <DependentUpon>TestLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <None Include="App_Code\Classes\AppData.cs" />
+    <Content Include="App_Code\Classes\CChild.cs" />
+    <Content Include="App_Code\Classes\CForms.cs" />
+    <Content Include="App_Code\Classes\CGlobal.cs" />
+    <Content Include="App_Code\Classes\CReport.cs" />
+    <Content Include="App_Code\Classes\CUser.cs" />
+    <Content Include="App_Code\IMBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="App_Code\IPServices.cs">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="controls\ChildDetail.ascx" />
+    <Content Include="controls\ChildDetail1.ascx" />
+    <Content Include="controls\ChildDetail2.ascx" />
+    <Content Include="controls\Footer.ascx" />
+    <Content Include="controls\FormTemplate.ascx" />
+    <Content Include="controls\Frm340DCF.ascx" />
+    <Content Include="controls\Frm340DTA.ascx" />
+    <Content Include="controls\Frm340IE.ascx" />
+    <Content Include="controls\Frm430.ascx" />
+    <Content Include="controls\FrmDataEntry.ascx" />
+    <Content Include="controls\NavMenuItem.ascx" />
+    <Content Include="controls\PageTitle.ascx" />
+    <Content Include="controls\RequirementTemplate.ascx" />
+    <Content Include="controls\TopNavMenu.ascx" />
+    <Content Include="DataEntryForm.aspx" />
+    <Content Include="ElementForms.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\help.gif" />
+    <Content Include="images\menubottomedge.gif" />
+    <Content Include="images\menuitembg.jpg" />
+    <Content Include="images\menuitemleftedge.jpg" />
+    <Content Include="images\menuitemrightedge.jpg" />
+    <Content Include="images\sheader1.jpg" />
+    <Content Include="images\sheader2.jpg" />
+    <Content Include="images\sheader3.jpg" />
+    <Content Include="images\sheader4.jpg" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="includes\ajax.css" />
+    <Content Include="includes\style.css" />
+    <Content Include="includes\styleprint.css" />
+    <Content Include="includes\StyleSheet.css" />
+    <Content Include="scripts\EECAjax.js" />
+    <Content Include="scripts\EECControls.js" />
+    <Content Include="WebServices\IPServices.asmx" />
+    <Content Include="App_Code\IPBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\ChildDetail.ascx.cs">
+      <DependentUpon>ChildDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\ChildDetail1.ascx.cs">
+      <DependentUpon>ChildDetail1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\ChildDetail2.ascx.cs">
+      <DependentUpon>ChildDetail2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\FormTemplate.ascx.cs">
+      <DependentUpon>FormTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\Frm340DCF.ascx.cs">
+      <DependentUpon>Frm340DCF.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\Frm340DTA.ascx.cs">
+      <DependentUpon>Frm340DTA.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\Frm340IE.ascx.cs">
+      <DependentUpon>Frm340IE.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\Frm430.ascx.cs">
+      <DependentUpon>Frm430.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\FrmDataEntry.ascx.cs">
+      <DependentUpon>FrmDataEntry.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\NavMenuItem.ascx.cs">
+      <DependentUpon>NavMenuItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\PageDetailFooter.ascx.cs">
+      <DependentUpon>PageDetailFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\PageDetailTitle.ascx.cs">
+      <DependentUpon>PageDetailTitle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\PageTitle.ascx.cs">
+      <DependentUpon>PageTitle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\RequirementTemplate.ascx.cs">
+      <DependentUpon>RequirementTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="controls\TopNavMenu.ascx.cs">
+      <DependentUpon>TopNavMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="DataEntryForm.aspx.cs">
+      <DependentUpon>DataEntryForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ElementForms.aspx.cs">
+      <DependentUpon>ElementForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="MasterPage0.master.cs">
+      <DependentUpon>MasterPage0.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="MasterPage0.master.designer.cs">
+      <DependentUpon>MasterPage0.master</DependentUpon>
+    </Content>
+    <Content Include="EditPaymentReport.aspx.cs">
+      <DependentUpon>EditPaymentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="PostLogin.aspx.cs">
+      <DependentUpon>PostLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="PrintForm.aspx.cs">
+      <DependentUpon>PrintForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="ReviewerComment.aspx.cs">
+      <DependentUpon>ReviewerComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="selectchild.aspx.cs">
+      <DependentUpon>selectchild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Template.aspx.cs">
+      <DependentUpon>Template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="bin\AjaxControlToolkit.pdb" />
+    <Content Include="bin\App_Licenses.dll" />
+    <Content Include="bin\ARVSPackage.dll" />
+    <Content Include="bin\ar\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\cs\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\de\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\EccimsControls.dll" />
+    <Content Include="bin\EECAjaxExtender.dll" />
+    <Content Include="bin\EECAjaxExtender.pdb" />
+    <Content Include="bin\EECControls.dll" />
+    <Content Include="bin\EECControls.pdb" />
+    <Content Include="bin\es\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\fr\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\he\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\hi\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\it\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\ja\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\ko\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\nl\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\pt\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\ru\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\tr-TR\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\zh-CHS\AjaxControlToolkit.resources.dll" />
+    <Content Include="bin\zh-CHT\AjaxControlToolkit.resources.dll" />
+    <Content Include="docs\100.txt" />
+    <Content Include="docs\200.txt" />
+    <Content Include="docs\detail.txt" />
+    <Content Include="MasterPage.master" />
+    <Content Include="EditPaymentReport.aspx" />
+    <Content Include="PrintForm.aspx" />
+    <Content Include="ReviewerComment.aspx" />
+    <Content Include="selectchild.aspx" />
+    <Content Include="Template.aspx" />
+    <Content Include="test.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\AjaxControlToolkit.dll.refresh" />
+    <None Include="bin\ARVSPackage.dll.refresh" />
+    <None Include="bin\EccimsControls.dll.refresh" />
+    <None Include="bin\EECAjaxExtender.dll.refresh" />
+    <None Include="bin\EECControls.dll.refresh" />
+    <None Include="docs\Requirements2011\IMPROPER PAYMENT FORM REQUIREMENTS_Rev1.docx" />
+    <None Include="docs\Requirements2011\IMPROPER PAYMENT FORM REQUIREMENTS_Rev2.docx" />
+    <None Include="docs\Requirements2011\IMPROPER PAYMENT FORM REQUIREMENTS_Rev3 %28TWJC edits comments2%29.docx" />
+    <None Include="docs\Requirements2011\IMPROPER PAYMENT FORM REQUIREMENTS_Rev4.1.docx" />
+    <None Include="docs\Requirements2011\IMPROPER PAYMENT FORM REQUIREMENTS_Rev4.2.docx" />
+    <None Include="docs\Requirements2011\IMPROPER PAYMENT FORM REQUIREMENTS_Rev4.3.docx" />
+    <None Include="docs\Requirements2011\IMPROPER PAYMENT FORM REQUIREMENTS_Rev4.4.docx" />
+    <None Include="docs\Requirements2011\IMPROPER PAYMENT FORM REQUIREMENTS_Rev4.docx" />
+    <Content Include="controls\PageDetailFooter.ascx" />
+    <Content Include="controls\PageDetailTitle.ascx" />
+    <Content Include="MasterPage0.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://eec-ua-wb-w002/SSI_WS_V2/Security.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SSI\</RelPath>
+      <UpdateFromURL>http://eec-ua-wb-w002/SSI_WS_V2/Security.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ImproperPaymentV2_SSI_Security</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2219</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

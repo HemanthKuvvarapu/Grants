@@ -1,0 +1,29 @@
+IE
+	new 
+		----1001. Signed and dated CCDF application form
+		----1002. Child care agreement
+		----1003. Applicant ID
+
+	re	
+		----1001. Signed and dated CCDF application form
+		----1002. Child care agreement
+
+DTA
+	new	
+		----1004.  Voucher or certificate
+		----1005.  DTA autho/referral
+		----1006.  ID to verify recipient of DTA autho/referral
+	re	
+		----1005.  DTA autho/referral 
+
+DCF	
+	new 
+		----1007.  Voucher or certificate
+		----1008.  DCF autho/referral
+		----1009.  ID to verify recipient of DCF autho/referral
+		----1010. Documentation of identity (Photo ID) : passport; driver's license; Federal or State ID card with photo; military ID card (or military dependent's ID card 					with photo); or school identification card with photo
+		----1011. Documentation of identity : birth certificate; certificate of U.S. citizenship; certificate of U.S. naturalization; U.S. permanent resident card ("green card"); U.S. Social Security Card; Unexpired U.S. temporary resident card; copy of applicant's record of school registration; or voter registration card
+	re
+		----1008. DCF autho/referral 
+		----1010. Documentation of identity (Photo ID) : passport; driver's license; Federal or State ID card with photo; military ID card (or military dependent's ID card 					with photo); or school identification card with photo
+		----1011. Documentation of identity : birth certificate; certificate of U.S. citizenship; certificate of U.S. naturalization; U.S. permanent resident card ("green card"); U.S. Social Security Card; Unexpired U.S. temporary resident card; copy of applicant's record of school registration; or voter registration card

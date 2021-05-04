@@ -1,0 +1,38 @@
+declare @indkey int
+declare @servicedate datetime
+declare @vendorcode varchar(20)
+
+set @indkey = 372000
+set @servicedate = '10/1/2007 12:00:00 AM'
+set @vendorcode = 'VC6000167650'
+
+select b.* into #tempA
+	from dwh.dbo.t_placement a join dwh.dbo.t_pvline b
+	  on a.num_place_id = b.num_place_id 
+		join dwh.dbo.v_contractline c
+		on (c.int_contract_line_id = dwh.dbo.sf_getfirstlineid(b.int_contract_line_id)
+			and c.ti_direct_care = 1)
+		where a.num_indid = @indkey
+		  and b.dt_service = @servicedate
+		
+declare @rate decimal(18, 4)
+declare @days decimal(18, 2)
+declare @totalAmount decimal(18, 4)
+declare @transAmount decimal(18, 4)
+declare @parentFee decimal(18, 4)
+
+select @rate = sum(num_rate) from #tempA where ti_trans <> 1
+select @totalAmount = sum(num_amount) from #tempA where ti_trans <> 1
+select @days = sum(num_unit) from #tempA where ti_trans <> 1 and ti_MMarsLineType = 1
+select @transAmount = sum(num_amount) from #tempA where ti_trans = 1
+select @parentFee = sum(num_fee) from #tempA where ti_trans <> 1 and ti_MMarsLineType = 1
+
+select @rate 'Provider Rate', 
+	   @totalAmount 'Authorized Amount', 
+	   @days 'Days',
+	   @transAmount 'Transportation Amount',
+	   @parentFee 'Parent Fee'
+
+select * from #tempA
+
+drop table #tempA

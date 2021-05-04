@@ -1,0 +1,150 @@
+﻿BODY
+{
+	padding-right:0px;
+	padding-left:0px;
+	background:#ffffff;
+	padding-bottom:0px;
+	margin:0px;
+	padding-top:0px;
+}
+
+.header
+{
+	background-color:#dde9d5;
+}
+
+.content
+{
+	font-family:Arial, Helvetica, sans-serif;
+    color: #000;
+    font-size:0.8em;
+    LINE-HEIGHT: 1.4em;
+}
+
+.footer
+{
+	height:45px;
+	background-color:#b5111a;
+	padding-left:15px;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:0.7em
+}
+
+.footer A:link 
+{
+	color: #ffffff; text-decoration:none
+}
+
+.footer A:visited
+{
+	color: #ffffff; text-decoration:none
+}
+
+.footer A:hover
+{
+	color:#ffffff; text-decoration:underline
+}
+
+.navTopMenu .navTopMenuItemF
+{
+	font-family:Arial;
+	font-size:0.8em;
+	font-weight:bold;
+	color:#ffffff;
+	text-decoration:none;
+	text-align:left;
+	background-color:#b30e1e;
+}
+
+.navTopMenu .navTopMenuItemB
+{
+	font-family:Arial;
+	font-size:0.8em;
+	font-weight:bold;
+	color:#f0f1f5;
+	text-decoration:none;
+	text-align:left;
+	background-color:#c1a400;
+}
+
+.navTopMenu A:hover
+{
+	
+}
+
+H1 {
+	PADDING-RIGHT: 20px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT-Family:Tahoma, "Times New Roman", Times; COLOR: #c24736; PADDING-TOP: 0.5em
+}
+H2 {
+	PADDING-RIGHT: 20px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT-Family:Tahoma, "Times New Roman", Times; Font-weight:bold; COLOR: #c24736; PADDING-TOP: 0.5em
+}
+H3 {
+	PADDING-RIGHT: 20px; DISPLAY: block; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; FONT-Family:Tahoma, "Times New Roman", Times; Font-weight:bold; COLOR: #c24736; PADDING-TOP: 0.5em
+}
+
+.menutextactive 
+{
+	font-family:Arial;
+	font-size:0.8em;
+	font-weight:bold;
+	text-decoration:none;
+	color:Blue;
+}
+
+.menutextactive A:link
+{
+	text-decoration:none;
+	color:Blue;
+}
+
+.menutextactive A:visited
+{
+	text-decoration:none;
+	color:Blue;
+}
+
+.menutextactive A:hover
+{
+	text-decoration:none;
+	color:Blue;
+}
+
+.menutextdeactive 
+{
+	font-family:Arial;
+	font-size:0.8em;
+	font-weight:bold;
+	text-decoration:none;
+	color:#000000
+}
+
+.menutextdeactive A:link
+{
+	text-decoration:none;
+	color:#000000;
+}
+
+.menutextdeactive A:visited
+{
+	text-decoration:none;
+	color:#000000;
+}
+
+.menutextdeactive A:hover
+{
+	text-decoration:none;
+	color:#000000;
+}
+
+.helpTipBlock
+{
+	background-color:#ffffff;
+	padding:5px;
+}
+
+.helpTip
+{
+	font-size:0.8em;
+	color:#0000ff;
+}

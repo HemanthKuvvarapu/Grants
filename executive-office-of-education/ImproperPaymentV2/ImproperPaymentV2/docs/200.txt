@@ -1,0 +1,94 @@
+IE
+	new 
+		child of teen parent
+			EEC income requirements	
+			activity requirements
+		working parents with low incomes [general priority], includes DTA post-transitional 
+			EEC income requirements			
+			activity requirements
+		child(ren) of military personnel
+			EEC income requirements	
+			 if one parent/guardian is deployed/activated, the other parent must meet EEC activity requirement.  If both are deployed/activated, the personal responsible for care of the children in the parents' absence must meet EEC activity requirement
+		parent or child with special needs
+			EEC income requirements	
+			documented special need
+		grandparent/guardian family: UNDER 65 years of age
+			meet EEC income requirement (retirement is an allowable EEC activity)
+		non-DTA homeless
+			meet EEC income requirement (living in shelter is an allowable EEC activity)
+			referral from DTA, HAP or shelter
+			
+			
+	re	
+		child of teen parent
+			EEC income requirements	
+			activity requirements
+		working parents with low incomes [general priority], includes DTA post-transitional 
+			EEC income requirements			
+			activity requirements
+		child(ren) of military personnel
+			EEC income requirements	
+			 if one parent/guardian is deployed/activated, the other parent must meet EEC activity requirement.  If both are deployed/activated, the personal responsible for care of the children in the parents' absence must meet EEC activity requirement
+		parent or child with special needs
+			EEC income requirements	
+			documented special need
+		grandparent/guardian family: UNDER 65 years of age
+			meet EEC income requirement (retirement is an allowable EEC activity)
+		non-DTA homeless
+			meet EEC income requirement (living in shelter is an allowable EEC activity)
+			referral from DTA, HAP or shelter
+
+IE continuity of care
+	new
+		Aging-out, Geographic Location, NTCC, and Teen Parent Contract
+			must be currently receiving EEC financial assistance
+		DCF referred
+			must be currently receiving EEC financial assistance
+			meet EEC income/activity requirements
+		child left care within 90 days
+			must have received EEC financial assistance within last 90 days
+		summer only
+			received EEC financial assistance within current year
+		Older school-age children
+			1.  A child turning age 13 (or age 16 with a documented special need) who is enrolled in an out-of-school program during the school year may remain in care until the end of the school year 
+			2.  a child turning 13 (or age sixteen with a documented special need) who is enrolled in a summer camp or program which takes place during the summer may remain in the program until the end of the summer
+		DTA continuity
+			families who lose their authorization
+		Change in Child Custody
+			court order and new custodian must complete initial assessment/reasessment
+	re
+
+DTA
+	new	
+		TAFDC
+			DTA autho/referral
+		DTA transitional
+			DTA autho/referral
+		child(ren) of homeless family
+			referral from DTA, HAP or shelter (exempt from both EEC income and activity requirements)
+		teen parent
+			DTA autho/referral
+		
+	re	
+		
+
+DCF	
+	new 
+		teen parent
+			DCF autho/referral
+		child(ren) in foster care
+			DCF autho/referral
+		supportive
+			DCF supportive autho/referral
+			
+		
+	re
+Sibling: IE and DCF continuity
+	new
+		EEC contract
+			sibling documented as currently receiving EEC financial assistance through contract
+		Voucher
+			sibling documented as currently receiving EEC financial assistance through voucher
+		CPC
+			sibling documented as currently receiving EEC financial assistance through CPC
+	re

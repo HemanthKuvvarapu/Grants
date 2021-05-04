@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://146.243.13.169/SSO_WS/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://146.243.13.169/SSO_WS/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://146.243.13.169/SSO_WS/">
+      <s:element name="IsGoodEmailAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGoodEmailAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsGoodEmailAddressResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGoodUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGoodUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsGoodUserNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGoodPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGoodPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsGoodPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGoodPhoneNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsGoodPhoneNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsGoodPhoneNumberResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSessionHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestorApp" type="tns:EECApp" />
+            <s:element minOccurs="0" maxOccurs="1" name="requestedPageUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="EECApp">
+        <s:restriction base="s:string">
+          <s:enumeration value="eCCIMS" />
+          <s:enumeration value="TQ" />
+          <s:enumeration value="BRCManager" />
+          <s:enumeration value="ProfessionalDevelopment" />
+          <s:enumeration value="LicensingManager" />
+          <s:enumeration value="EducatorRegistry" />
+          <s:enumeration value="QRIS" />
+          <s:enumeration value="QRISPilot" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="UpdateSessionHistoryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSessionId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iTicket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSessionIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSessionIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfile1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfile1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfile1Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfile2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfile2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfile2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfile3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfile3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfile3Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfile_Multiple">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userIDList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserProfile_MultipleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserProfile_MultipleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewSsiUser1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ssoPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securityPhrase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="gender" type="tns:Gender" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayOfBirthMonth" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneExt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="secQuestionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="secAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetAddress2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="termsConditionsAccepted" type="tns:TermsConditions" />
+            <s:element minOccurs="1" maxOccurs="1" name="ssoStatus" type="tns:SSOStatus" />
+            <s:element minOccurs="1" maxOccurs="1" name="createdByUserID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="applicationName" type="tns:EECApp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Gender">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="Female" />
+          <s:enumeration value="Male" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TermsConditions">
+        <s:restriction base="s:string">
+          <s:enumeration value="No" />
+          <s:enumeration value="Yes" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="SSOStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="CreatedByAdmin" />
+          <s:enumeration value="UserCreated" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AddNewSsiUser1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewSsiUser1Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewSsiUser2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ssoPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securityPhrase" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="gender" type="tns:Gender" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayOfBirthMonth" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneExt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="secQuestionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="secAnswer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetAddress2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="termsConditionsAccepted" type="tns:TermsConditions" />
+            <s:element minOccurs="1" maxOccurs="1" name="ssoStatus" type="tns:SSOStatus" />
+            <s:element minOccurs="1" maxOccurs="1" name="createdByUserID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="applicationId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewSsiUser2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNewSsiUser2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSsiUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="gender" type="tns:Gender" />
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneExt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetAddress2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="modifyByUserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSsiUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateSsiUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartNewSession1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="identityToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartNewSession1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartNewSession1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EndSessionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartNewSession2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identityToken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartNewSession2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartNewSession2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeActivateUser1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userApps" type="tns:EECApp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeActivateUser1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeActivateUser1Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateUser1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eecApplication" type="tns:EECApp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivateUser1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActivateUser1Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserID1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserID1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserID1Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserID2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserID2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserID2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserName2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserName2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserName2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserAppsInfo3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserAppsInfo3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserAppsInfo3Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSsiUser1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSsiUser1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSsiUser1Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSsiUser2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSsiUser2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSsiUser2Result" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsGoodEmailAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:IsGoodEmailAddress" />
+  </wsdl:message>
+  <wsdl:message name="IsGoodEmailAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:IsGoodEmailAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsGoodUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:IsGoodUserName" />
+  </wsdl:message>
+  <wsdl:message name="IsGoodUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:IsGoodUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsGoodPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:IsGoodPassword" />
+  </wsdl:message>
+  <wsdl:message name="IsGoodPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:IsGoodPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsGoodPhoneNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:IsGoodPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="IsGoodPhoneNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:IsGoodPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSessionHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSessionHistory" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSessionHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSessionHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSessionId" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSessionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidSession" />
+  </wsdl:message>
+  <wsdl:message name="IsValidSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfile1SoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserProfile1" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfile1SoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserProfile1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfile2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserProfile2" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfile2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserProfile2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfile3SoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserProfile3" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfile3SoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserProfile3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfile_MultipleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserProfile_Multiple" />
+  </wsdl:message>
+  <wsdl:message name="GetUserProfile_MultipleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserProfile_MultipleResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewSsiUser1SoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewSsiUser1" />
+  </wsdl:message>
+  <wsdl:message name="AddNewSsiUser1SoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewSsiUser1Response" />
+  </wsdl:message>
+  <wsdl:message name="AddNewSsiUser2SoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewSsiUser2" />
+  </wsdl:message>
+  <wsdl:message name="AddNewSsiUser2SoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewSsiUser2Response" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSsiUserSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSsiUser" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSsiUserSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSsiUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartNewSession1SoapIn">
+    <wsdl:part name="parameters" element="tns:StartNewSession1" />
+  </wsdl:message>
+  <wsdl:message name="StartNewSession1SoapOut">
+    <wsdl:part name="parameters" element="tns:StartNewSession1Response" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:EndSession" />
+  </wsdl:message>
+  <wsdl:message name="EndSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:EndSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartNewSession2SoapIn">
+    <wsdl:part name="parameters" element="tns:StartNewSession2" />
+  </wsdl:message>
+  <wsdl:message name="StartNewSession2SoapOut">
+    <wsdl:part name="parameters" element="tns:StartNewSession2Response" />
+  </wsdl:message>
+  <wsdl:message name="DeActivateUser1SoapIn">
+    <wsdl:part name="parameters" element="tns:DeActivateUser1" />
+  </wsdl:message>
+  <wsdl:message name="DeActivateUser1SoapOut">
+    <wsdl:part name="parameters" element="tns:DeActivateUser1Response" />
+  </wsdl:message>
+  <wsdl:message name="ActivateUser1SoapIn">
+    <wsdl:part name="parameters" element="tns:ActivateUser1" />
+  </wsdl:message>
+  <wsdl:message name="ActivateUser1SoapOut">
+    <wsdl:part name="parameters" element="tns:ActivateUser1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetUserID1SoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserID1" />
+  </wsdl:message>
+  <wsdl:message name="GetUserID1SoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserID1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetUserID2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserID2" />
+  </wsdl:message>
+  <wsdl:message name="GetUserID2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserID2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetUserName2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserName2" />
+  </wsdl:message>
+  <wsdl:message name="GetUserName2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserName2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAppsInfo3SoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserAppsInfo3" />
+  </wsdl:message>
+  <wsdl:message name="GetUserAppsInfo3SoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserAppsInfo3Response" />
+  </wsdl:message>
+  <wsdl:message name="IsSsiUser1SoapIn">
+    <wsdl:part name="parameters" element="tns:IsSsiUser1" />
+  </wsdl:message>
+  <wsdl:message name="IsSsiUser1SoapOut">
+    <wsdl:part name="parameters" element="tns:IsSsiUser1Response" />
+  </wsdl:message>
+  <wsdl:message name="IsSsiUser2SoapIn">
+    <wsdl:part name="parameters" element="tns:IsSsiUser2" />
+  </wsdl:message>
+  <wsdl:message name="IsSsiUser2SoapOut">
+    <wsdl:part name="parameters" element="tns:IsSsiUser2Response" />
+  </wsdl:message>
+  <wsdl:portType name="SecuritySoap">
+    <wsdl:operation name="IsGoodEmailAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Checks for a proper email format</wsdl:documentation>
+      <wsdl:input message="tns:IsGoodEmailAddressSoapIn" />
+      <wsdl:output message="tns:IsGoodEmailAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Checks to see if the given username meets the minimum requirements</wsdl:documentation>
+      <wsdl:input message="tns:IsGoodUserNameSoapIn" />
+      <wsdl:output message="tns:IsGoodUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodPassword">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Checks to see if the given password meets the minimum requirements</wsdl:documentation>
+      <wsdl:input message="tns:IsGoodPasswordSoapIn" />
+      <wsdl:output message="tns:IsGoodPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodPhoneNumber">
+      <wsdl:input message="tns:IsGoodPhoneNumberSoapIn" />
+      <wsdl:output message="tns:IsGoodPhoneNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSessionHistory">
+      <wsdl:input message="tns:UpdateSessionHistorySoapIn" />
+      <wsdl:output message="tns:UpdateSessionHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionId">
+      <wsdl:input message="tns:GetSessionIdSoapIn" />
+      <wsdl:output message="tns:GetSessionIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSession">
+      <wsdl:input message="tns:IsValidSessionSoapIn" />
+      <wsdl:output message="tns:IsValidSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">verifies the session validity and returns the user's profile to whom the session belongs</wsdl:documentation>
+      <wsdl:input name="GetUserProfile1" message="tns:GetUserProfile1SoapIn" />
+      <wsdl:output name="GetUserProfile1" message="tns:GetUserProfile1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">validates the session to identify the caller and then returns the user profile based on the username</wsdl:documentation>
+      <wsdl:input name="GetUserProfile2" message="tns:GetUserProfile2SoapIn" />
+      <wsdl:output name="GetUserProfile2" message="tns:GetUserProfile2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">validates the session to identify the caller and then returns the user profile based on the user id</wsdl:documentation>
+      <wsdl:input name="GetUserProfile3" message="tns:GetUserProfile3SoapIn" />
+      <wsdl:output name="GetUserProfile3" message="tns:GetUserProfile3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile_Multiple">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">takes in a comma separated user id list and returns the users profile for all.</wsdl:documentation>
+      <wsdl:input message="tns:GetUserProfile_MultipleSoapIn" />
+      <wsdl:output message="tns:GetUserProfile_MultipleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSsiUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">validates the session to identify the caller and then adds a new user to the sso.</wsdl:documentation>
+      <wsdl:input name="AddNewSsiUser1" message="tns:AddNewSsiUser1SoapIn" />
+      <wsdl:output name="AddNewSsiUser1" message="tns:AddNewSsiUser1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSsiUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">validates the session to identify the caller and then adds a new user to the sso.</wsdl:documentation>
+      <wsdl:input name="AddNewSsiUser2" message="tns:AddNewSsiUser2SoapIn" />
+      <wsdl:output name="AddNewSsiUser2" message="tns:AddNewSsiUser2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSsiUser">
+      <wsdl:input message="tns:UpdateSsiUserSoapIn" />
+      <wsdl:output message="tns:UpdateSsiUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartNewSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">starts a new session based on the user id and returns the session id. The identityToken is the private key that authorized users must provide.</wsdl:documentation>
+      <wsdl:input name="StartNewSession1" message="tns:StartNewSession1SoapIn" />
+      <wsdl:output name="StartNewSession1" message="tns:StartNewSession1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <wsdl:input message="tns:EndSessionSoapIn" />
+      <wsdl:output message="tns:EndSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartNewSession">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">starts a new session based on the username and returns the session id.The identityToken is the private key that authorized users must provide.</wsdl:documentation>
+      <wsdl:input name="StartNewSession2" message="tns:StartNewSession2SoapIn" />
+      <wsdl:output name="StartNewSession2" message="tns:StartNewSession2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeActivateUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">deactivates the user specified by userid. SessionID is used to verify the requestor.</wsdl:documentation>
+      <wsdl:input name="DeActivateUser1" message="tns:DeActivateUser1SoapIn" />
+      <wsdl:output name="DeActivateUser1" message="tns:DeActivateUser1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">activates the user specified by userid. SessionID is used to verify the requestor.</wsdl:documentation>
+      <wsdl:input name="ActivateUser1" message="tns:ActivateUser1SoapIn" />
+      <wsdl:output name="ActivateUser1" message="tns:ActivateUser1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">gets the user id associated with the Session Id</wsdl:documentation>
+      <wsdl:input name="GetUserID1" message="tns:GetUserID1SoapIn" />
+      <wsdl:output name="GetUserID1" message="tns:GetUserID1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">gets the userid based on the username. SessionID is used to verify the requestor.</wsdl:documentation>
+      <wsdl:input name="GetUserID2" message="tns:GetUserID2SoapIn" />
+      <wsdl:output name="GetUserID2" message="tns:GetUserID2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">gets the username based on the userid. SessionID is used to verify the requestor.</wsdl:documentation>
+      <wsdl:input name="GetUserName2" message="tns:GetUserName2SoapIn" />
+      <wsdl:output name="GetUserName2" message="tns:GetUserName2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAppsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">gets the users applications list based on the userid. SessionID is used to verify the requestor.</wsdl:documentation>
+      <wsdl:input name="GetUserAppsInfo3" message="tns:GetUserAppsInfo3SoapIn" />
+      <wsdl:output name="GetUserAppsInfo3" message="tns:GetUserAppsInfo3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSsiUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Checks to see if the username is present in the EEC SSO database. SessionID is used to verify the requestor.</wsdl:documentation>
+      <wsdl:input name="IsSsiUser1" message="tns:IsSsiUser1SoapIn" />
+      <wsdl:output name="IsSsiUser1" message="tns:IsSsiUser1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSsiUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Checks to see if the userid is present in the EEC SSO database.SessionID is used to verify the requestor.</wsdl:documentation>
+      <wsdl:input name="IsSsiUser2" message="tns:IsSsiUser2SoapIn" />
+      <wsdl:output name="IsSsiUser2" message="tns:IsSsiUser2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecuritySoap" type="tns:SecuritySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsGoodEmailAddress">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/IsGoodEmailAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodUserName">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/IsGoodUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodPassword">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/IsGoodPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodPhoneNumber">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/IsGoodPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSessionHistory">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/UpdateSessionHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionId">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetSessionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSession">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/IsValidSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetUserProfile1" style="document" />
+      <wsdl:input name="GetUserProfile1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserProfile1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetUserProfile2" style="document" />
+      <wsdl:input name="GetUserProfile2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserProfile2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetUserProfile3" style="document" />
+      <wsdl:input name="GetUserProfile3">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserProfile3">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile_Multiple">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetUserProfile_Multiple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSsiUser">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/AddNewSsiUser1" style="document" />
+      <wsdl:input name="AddNewSsiUser1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddNewSsiUser1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSsiUser">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/AddNewSsiUser2" style="document" />
+      <wsdl:input name="AddNewSsiUser2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddNewSsiUser2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSsiUser">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/UpdateSsiUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewSession">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/StartNewSession1" style="document" />
+      <wsdl:input name="StartNewSession1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StartNewSession1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/EndSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewSession">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/StartNewSession2" style="document" />
+      <wsdl:input name="StartNewSession2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StartNewSession2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeActivateUser">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/DeActivateUser1" style="document" />
+      <wsdl:input name="DeActivateUser1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeActivateUser1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUser">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/ActivateUser1" style="document" />
+      <wsdl:input name="ActivateUser1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActivateUser1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetUserID1" style="document" />
+      <wsdl:input name="GetUserID1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserID1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetUserID2" style="document" />
+      <wsdl:input name="GetUserID2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserID2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetUserName2" style="document" />
+      <wsdl:input name="GetUserName2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserName2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAppsInfo">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/GetUserAppsInfo3" style="document" />
+      <wsdl:input name="GetUserAppsInfo3">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserAppsInfo3">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSsiUser">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/IsSsiUser1" style="document" />
+      <wsdl:input name="IsSsiUser1">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsSsiUser1">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSsiUser">
+      <soap:operation soapAction="http://146.243.13.169/SSO_WS/IsSsiUser2" style="document" />
+      <wsdl:input name="IsSsiUser2">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsSsiUser2">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SecuritySoap12" type="tns:SecuritySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsGoodEmailAddress">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/IsGoodEmailAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodUserName">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/IsGoodUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodPassword">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/IsGoodPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGoodPhoneNumber">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/IsGoodPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSessionHistory">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/UpdateSessionHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionId">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetSessionId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidSession">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/IsValidSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetUserProfile1" style="document" />
+      <wsdl:input name="GetUserProfile1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserProfile1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetUserProfile2" style="document" />
+      <wsdl:input name="GetUserProfile2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserProfile2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetUserProfile3" style="document" />
+      <wsdl:input name="GetUserProfile3">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserProfile3">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProfile_Multiple">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetUserProfile_Multiple" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSsiUser">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/AddNewSsiUser1" style="document" />
+      <wsdl:input name="AddNewSsiUser1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddNewSsiUser1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSsiUser">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/AddNewSsiUser2" style="document" />
+      <wsdl:input name="AddNewSsiUser2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddNewSsiUser2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSsiUser">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/UpdateSsiUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewSession">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/StartNewSession1" style="document" />
+      <wsdl:input name="StartNewSession1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StartNewSession1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndSession">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/EndSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartNewSession">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/StartNewSession2" style="document" />
+      <wsdl:input name="StartNewSession2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="StartNewSession2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeActivateUser">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/DeActivateUser1" style="document" />
+      <wsdl:input name="DeActivateUser1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeActivateUser1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivateUser">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/ActivateUser1" style="document" />
+      <wsdl:input name="ActivateUser1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ActivateUser1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetUserID1" style="document" />
+      <wsdl:input name="GetUserID1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserID1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserID">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetUserID2" style="document" />
+      <wsdl:input name="GetUserID2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserID2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserName">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetUserName2" style="document" />
+      <wsdl:input name="GetUserName2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserName2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAppsInfo">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/GetUserAppsInfo3" style="document" />
+      <wsdl:input name="GetUserAppsInfo3">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserAppsInfo3">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSsiUser">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/IsSsiUser1" style="document" />
+      <wsdl:input name="IsSsiUser1">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsSsiUser1">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSsiUser">
+      <soap12:operation soapAction="http://146.243.13.169/SSO_WS/IsSsiUser2" style="document" />
+      <wsdl:input name="IsSsiUser2">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="IsSsiUser2">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Security">
+    <wsdl:port name="SecuritySoap" binding="tns:SecuritySoap">
+      <soap:address location="http://146.243.13.169/ssi_ws_v2/Security.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SecuritySoap12" binding="tns:SecuritySoap12">
+      <soap12:address location="http://146.243.13.169/ssi_ws_v2/Security.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
